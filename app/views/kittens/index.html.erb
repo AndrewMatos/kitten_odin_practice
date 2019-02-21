@@ -1,0 +1,8 @@
+<ul>
+<% @kittens.each do |kitten|%> 
+	<li><%= link_to  "name: "+kitten.name+" " , kitten %></li>
+<% end %>
+</ul>
+
+<%= link_to "new kitten", new_kitten_url %>
+

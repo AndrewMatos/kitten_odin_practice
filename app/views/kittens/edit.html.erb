@@ -1,0 +1,28 @@
+<%= form_for @kitten do |f| %>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name, value:@kitten.name %>
+	</div>
+	<div>
+		<%= f.label :age %>
+		<%= f.select(:age, @age, selected: @kitten.age) %>
+	</div>
+
+	<div>
+		<%= f.label :cuteness %>
+		<%= f.select(:cuteness, @cute_and_soft, selected: @kitten.cuteness) %>
+	</div>
+    
+    <div>
+		<%= f.label :softness %>
+		<%= f.select(:softness, @cute_and_soft, selected: @kitten.softness) %>
+	</div>
+	
+	<div>
+		<%= f.submit "update kitten" %>
+	</div>
+	
+<% end %>
+
+<%= link_to "delete", @kitten, method: :delete, data:{confirm: "Are you sure"} %>
+
